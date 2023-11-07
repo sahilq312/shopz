@@ -17,3 +17,13 @@ export async function POST(req : Request){
         return NextResponse.json({error}, {status:500})
     }
 }
+export async function GET(){
+    await connect();
+    try {
+        
+        const users = await User.find()
+        return  NextResponse.json(users, {status: 200})
+    } catch (error) {
+        return NextResponse.json({error}, {status:500})
+    }
+}
