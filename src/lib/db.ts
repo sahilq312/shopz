@@ -2,8 +2,6 @@ import mongoose from "mongoose";
 
 
 const MONGO = process.env.MONGO_URI as string
-console.log(MONGO);
-
 
 export default async function connect() {
     try {

@@ -4,8 +4,10 @@ type User = {
 }
 
 type Product = {
+    id : id
     title : string,
     image : string,
     price : number,
-    description : string
+    description? : string
+    category? : string
 }
