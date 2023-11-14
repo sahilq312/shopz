@@ -1,25 +1,28 @@
 import ProductList from "@/component/Product";
 
 async function getData() {
-  const res = await fetch('https://fakestoreapi.com/products')
+  const res = await fetch("https://fakestoreapi.com/products");
   // The return value is *not* serialized
   // You can return Date, Map, Set, etc.
-  
- 
+
   if (!res.ok) {
     // This will activate the closest `error.js` Error Boundary
-    throw new Error('Failed to fetch data')
+    throw new Error("Failed to fetch data");
   }
- 
-  return res.json()
+
+  return res.json();
 }
- 
+
 export default async function Page() {
-  const data : Product[] = await getData()
+  const data: Product[] = await getData();
   //console.log(data);
-  
- 
-  return <main>
-    <ProductList products={data}/>
-  </main>
+
+  return (
+    <div className="bg-white">
+      <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
+        <h2 className="sr-only">Products</h2>
+        <ProductList products={data} />
+      </div>
+    </div>
+  );
 }

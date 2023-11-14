@@ -38,6 +38,7 @@ export default async function Home() {
                               className="h-full w-full object-cover object-center"
                               height={64}
                               width={44}
+                              unoptimized
                             />
                           </div>
                           <div className="h-64 w-44 overflow-hidden rounded-lg">
@@ -47,6 +48,7 @@ export default async function Home() {
                               className="h-full w-full object-cover object-center"
                               height={64}
                               width={44}
+                              unoptimized
                             />
                           </div>
                         </div>
@@ -58,6 +60,7 @@ export default async function Home() {
                               className="h-full w-full object-cover object-center"
                               height={64}
                               width={44}
+                              unoptimized
                             />
                           </div>
                           <div className="h-64 w-44 overflow-hidden rounded-lg">
@@ -67,6 +70,7 @@ export default async function Home() {
                               className="h-full w-full object-cover object-center"
                               height={64}
                               width={44}
+                              unoptimized
                             />
                           </div>
                           <div className="h-64 w-44 overflow-hidden rounded-lg">
@@ -76,6 +80,7 @@ export default async function Home() {
                               className="h-full w-full object-cover object-center"
                               height={64}
                               width={44}
+                              unoptimized
                             />
                           </div>
                         </div>
@@ -87,6 +92,7 @@ export default async function Home() {
                               className="h-full w-full object-cover object-center"
                               height={64}
                               width={44}
+                              unoptimized
                             />
                           </div>
                           <div className="h-64 w-44 overflow-hidden rounded-lg">
@@ -96,6 +102,7 @@ export default async function Home() {
                               className="h-full w-full object-cover object-center"
                               height={64}
                               width={44}
+                              unoptimized
                             />
                           </div>
                         </div>

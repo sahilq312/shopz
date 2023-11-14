@@ -6,6 +6,9 @@ import Image from "next/image";
 
 const NavBar = async () => {
   const session = await getServerSession(authOptions);
+  if (!session) {
+    redirect("/login");
+  }
   if (session) {
     return (
       <nav className="bg-white border-gray-200 dark:bg-gray-900 w-full">
@@ -121,9 +124,6 @@ const NavBar = async () => {
         </div>
       </nav>
     );
-  }
-  if (!session) {
-    redirect("/login");
   }
 };
 export default NavBar;

@@ -20,10 +20,8 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <AuthProvider>
-          {/* <div className=" w-screen bg-red-400 h-16 pl-10 pt-4 pr-10">
-          </div> */}
           <NavBar />
-          {children}
+          <main className="m-auto min-w-[300px] max-w-7xl p-4">{children}</main>
         </AuthProvider>
       </body>
     </html>

@@ -3,7 +3,6 @@ const nextConfig = {
     images: {
         domains: ['tailwindui.com', 'flowbite.com', "fakestoreapi.com"],
     },
-    
 }
 
 
