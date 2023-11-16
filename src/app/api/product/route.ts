@@ -17,6 +17,7 @@ export const POST = async (req : Request) => {
 }
 
 export const GET = async()=> {
+    await connect();
     try {
         const products = await Product.find();
         return NextResponse.json(products, {status:200})

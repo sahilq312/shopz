@@ -7,7 +7,7 @@ interface ProductCardProps {
 
 export default function ProductCard({ product }: ProductCardProps) {
   return (
-    <a key={product.id} href={product.id} className=" ">
+    <a key={product._id} href={product._id} className=" ">
               <div className="aspect-h-1 aspect-w-1 w-64 overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
                 <Image
                   src={product.image}

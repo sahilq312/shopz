@@ -1,12 +1,12 @@
-import React from 'react'
+import React from "react";
+import AdminProductList from "@/component/AdminProductList";
 
-const Admin = () => {
+const AdminProduct = () => {
   return (
     <div>
-      <h1>Mange Products</h1>
-      
+      <AdminProductList />
     </div>
-  )
-}
+  );
+};
 
-export default Admin
+export default AdminProduct;

@@ -33,7 +33,7 @@ export default function Page() {
         },
       });
 
-      if (res.ok) {
+      if (res.status === 200) {
        redirect("/product");
       } else {
         throw new Error("Failed to create product");

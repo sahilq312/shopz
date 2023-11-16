@@ -4,7 +4,7 @@ type User = {
 }
 
 type Product = {
-    id ?: id
+    _id ?: id
     title : string,
     image : string,
     price : number,
