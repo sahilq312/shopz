@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-
+import Image from "next/image"
 const AdminProductList = () => {
   // fetch to complete, we dont attempt to render the image
   let [product, setProduct] = useState<Product[]>();
@@ -14,7 +14,7 @@ const AdminProductList = () => {
   }, []);
 
   return (
-    <section className="items-center lg:flex bg-gray-50 lg:h-screen font-poppins dark:bg-gray-800 ">
+    <section className="items-center lg:flex bg-gray-50 lg:h-screen font-poppins dark:bg-gray-800 w-full ">
       <div className="justify-center flex-1 max-w-6xl px-4 py-4 mx-auto lg:py-8 md:px-6">
         <div className="pt-4 bg-white rounded shadow dark:bg-gray-900">
           <div className="flex px-6 pb-4 border-b dark:border-gray-700">
@@ -24,52 +24,31 @@ const AdminProductList = () => {
             <table className="w-full table-auto">
               <thead>
                 <tr className="text-xs text-left text-gray-500 dark:text-gray-400">
-                  <th className="px-6 pb-3 font-medium">Transaction ID</th>
-                  <th className="px-6 pb-3 font-medium ">Date </th>
-                  <th className="px-6 pb-3 font-medium">Email </th>
-                  <th className="px-6 pb-3 font-medium">Status </th>
-                  <th className="px-6 pb-3 font-medium"> </th>
+                  <th className="px-6 pb-3 font-medium">Image</th>
+                  <th className="px-6 pb-3 font-medium ">Title </th>
+                  <th className="px-6 pb-3 font-medium">Category </th>
+                  <th className="px-6 pb-3 font-medium">Price </th>
+                  <th className="px-6 pb-3 font-medium">   </th>
                 </tr>
               </thead>
               <tbody>
-                <tr className="text-xs bg-gray-100 dark:text-gray-400 dark:bg-gray-800">
-                  <td className="px-6 py-5 font-medium">018276td45</td>
-                  <td className="px-6 py-5 font-medium ">08.4.2021</td>
-                  <td className="px-6 py-5 font-medium ">abc@gmail.com</td>
-                  <td>
-                    <span className="inline-block px-2 py-1 text-center text-green-600 bg-green-100 rounded-full dark:text-green-700 dark:bg-green-200">
-                      Completed
-                    </span>
-                  </td>
-                  <td className="px-6 py-5 ">
-                    <a
-                      href="#"
-                      className="px-4 py-2 font-medium text-blue-500 border border-blue-500 rounded-md dark:text-blue-300 dark:border-blue-300 dark:hover:bg-blue-300 dark:hover:text-gray-700 hover:text-gray-100 hover:bg-blue-500"
-                    >
-                      Edit
-                    </a>
-                  </td>
-                </tr>
                 {product?.map((item) => (
                   <tr
                     key={item._id}
                     className="text-xs bg-gray-100 dark:text-gray-400 dark:bg-gray-800"
                   >
+                    <td className="px-6 py-5 font-medium ">
+                      <Image src={item.image} alt="image" width={30} height={30}/></td>
                     <td className="px-6 py-5 font-medium">{item.title}</td>
                     <td className="px-6 py-5 font-medium ">{item.category}</td>
                     <td className="px-6 py-5 font-medium ">{item.price}</td>
-                    <td>
-                      <span className="inline-block px-2 py-1 text-center text-green-600 bg-green-100 rounded-full dark:text-green-700 dark:bg-green-200">
-                        Completed
-                      </span>
-                    </td>
+                    
                     <td className="px-6 py-5 ">
-                      <a
-                        href="#"
+                      <button 
                         className="px-4 py-2 font-medium text-blue-500 border border-blue-500 rounded-md dark:text-blue-300 dark:border-blue-300 dark:hover:bg-blue-300 dark:hover:text-gray-700 hover:text-gray-100 hover:bg-blue-500"
                       >
-                        Edit
-                      </a>
+                        Delete
+                      </button>
                     </td>
                   </tr>
                 ))}
