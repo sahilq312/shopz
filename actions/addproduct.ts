@@ -1,30 +1,32 @@
 "use server"
 
 import { db } from "@/lib/db";
-import { ProductSchema } from "@/schema"
-import * as z from "zod"
+import { ProductSchema } from "@/schema";
+import * as z from "zod";
 
-export const addProduct = async( value : z.infer<typeof ProductSchema> )=>{
-    const validatedFields = ProductSchema.safeParse(value);
+export const add = async (values: z.infer<typeof ProductSchema>) => {
+    const validatedFields = ProductSchema.safeParse(values);
 
     if (!validatedFields.success) {
-        return { error: "Invalid field!" }
+        return { error: "Invalid field!" };
     }
+
     const { title, description, price, category, image } = validatedFields.data;
 
     try {
-        const product = await db.product.create({
-            data : {
+        const newProduct = await db.product.create({
+            data: {
                 title,
                 description,
                 price,
                 category,
-                image
-            }
-        })
-        return { success : " product created successfully"}
-        
+                image,
+            },
+        });
+
+        return { success: "Product created successfully", newProduct };
     } catch (error) {
-        return { error: "product not added" }
+        console.error("Error creating product:", error);
+        return { error: "Failed to create product" };
     }
-}
+};

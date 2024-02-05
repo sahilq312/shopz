@@ -89,6 +89,6 @@ model Product {
   price Int
   category String
   image  String
-  createdAt   DateTime   @default(now())
-  updatedAt   DateTime   @updatedAt
+  createdAt   DateTime?   @default(now())
+  updatedAt   DateTime?   @updatedAt
 }

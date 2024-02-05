@@ -13,9 +13,14 @@ export const RegisterSchema = z.object({
 });
 
 export const ProductSchema = z.object({
+    id : z.string(),
     title : z.string(),
     description : z.string(),
     price :  z.coerce.number(),
     category  : z.string(),
     image : z.string().url(),
+});
+
+export const ProductsSchema = z.object({
+    items : z.array(ProductSchema)
 });
