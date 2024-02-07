@@ -5,10 +5,16 @@ NextCommerce is a cutting-edge e-commerce web application designed to provide a 
 ## Tech Stack
 
 [prisma] (https://prisma.io) - for ORM and database management .
+
 [Next.js](http://nextjs.org) - React framework for full stack development
-[Auth.js](http://auth.js) - for authentication and authorization
+
+[Auth.js](http://auth.js) - for authentication and authorization 
+
 [Shadcn.ui](https://ui.shadcn.com/) - for ui components
+
+
 [NeonDB] (http://neon.tech) - lightweight noSQL database 
+
 [clould] - Cloud Storage for scalability , performance and reliability
 
 ## Getting Started
