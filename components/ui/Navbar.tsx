@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { ModeToggle } from "./toggle"
+import { ShoppingCartIcon } from "lucide-react"
 
 const Navbar = ()=> {
     return (
@@ -7,6 +8,7 @@ const Navbar = ()=> {
             <Link href={"/"}>Home</Link>
             <Link href={"/admin"}>Admin</Link>
             <Link href={"/setting"}>Profile</Link>
+            <Link href={"/cart"}><ShoppingCartIcon/></Link>
             <ModeToggle/>
         
         </nav>

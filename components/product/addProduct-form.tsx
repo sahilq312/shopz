@@ -48,7 +48,7 @@ const AddProduct = () => {
     
   };
   return (
-    <div>
+    <div className=" p-8">
       <Form {...form}>
         <form onSubmit={form.handleSubmit(addproduct)} className="space-y-4">
           <div className="space-y-4">
