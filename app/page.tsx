@@ -16,7 +16,7 @@ const font = Poppins({
 export default async function Home() {
   const products = await List();
   return (
-    <div className="space-y-4">
+    <div className="space-y-4 p-10">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {products.map((product) => (
           <Link

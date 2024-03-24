@@ -15,7 +15,7 @@ export default async function UserPage({ params: { id } }: Params) {
     return (<>Error </>);
   }
   return (
-    <div className="">
+    <div className=" ">
         <div key={product.id} className="">
           <section className="text-gray-700 body-font overflow-hidden bg-white">
             <div className="container px-5 py-24 mx-auto">

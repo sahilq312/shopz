@@ -5,6 +5,10 @@ const nextConfig = {
             {
                 protocol: 'https',
                 hostname: 'imgs.search.brave.com',
+            },
+            {
+                protocol: 'https',
+                hostname: 'avatars.githubusercontent.com'
             }
         ]
     }
