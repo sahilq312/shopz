@@ -19,8 +19,13 @@ export const register = async (values: z.infer<typeof RegisterSchema>) => {
         return { error: "Email already exists" }
     }
 
-    await db.user.create({
+    const newUser = await db.user.create({
         data: { email, password : hashedPassword, name }
+    })
+    await db.cart.create({
+        data : {
+            userId : newUser.id,
+        }
     })
     return { success: "Email sent" }
 

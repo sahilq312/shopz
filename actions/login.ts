@@ -4,6 +4,7 @@ import { LoginSchema } from "@/schema";
 import { signIn } from "@/auth";
 import { DEFAULT_LOGIN_REDIRECT } from "@/route";
 import { AuthError } from "next-auth";
+import { db } from "@/lib/db";
 export const login = async (
     values: z.infer<typeof LoginSchema>,
     callbackUrl?: string | null,
@@ -20,6 +21,7 @@ export const login = async (
             password,
             redirectTo: callbackUrl || DEFAULT_LOGIN_REDIRECT
         })
+        
     } catch (error) {
         if (error instanceof AuthError) {
             switch (error.type) {

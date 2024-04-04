@@ -3,6 +3,7 @@ import ProductImage from "@/components/product/productPageImage";
 import { Button } from "@/components/ui/button";
 import { AspectRatio } from "@radix-ui/react-aspect-ratio";
 import Image from "next/image";
+import AddToCartButton from "./AddToCartButton";
 
 type Params = {
   params: {
@@ -137,9 +138,10 @@ export default async function UserPage({ params: { id } }: Params) {
                     <span className="title-font font-medium text-2xl text-gray-900">
                       {product.price}
                     </span>
-                    <button /* onClick={addtocart(product.id)} */ className="flex ml-auto text-white bg-black border-0 py-2 px-6 focus:outline-none rounded-full">
+                    {/* <button onClick={addToCart(product.id)}  className="flex ml-auto text-white bg-black border-0 py-2 px-6 focus:outline-none rounded-full">
                       Add to cart
-                    </button>
+                    </button> */}
+                    <AddToCartButton productId={product.id}/>
                     <button className="rounded-full w-10 h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4">
                       <svg
                         fill="currentColor"

@@ -6,6 +6,7 @@ import Google from "next-auth/providers/google";
 
 import { LoginSchema } from "@/schema";
 import { getUserByEmail } from "@/data/user";
+import { getCart } from "./actions/cart";
 
 export default {
   providers: [
@@ -28,7 +29,11 @@ export default {
           if (!user || !user.password) return null;
 
           const passwordMatch = await bcrypt.compare(password, user.password)
-          if(passwordMatch) return user;
+          if(passwordMatch) {
+            /* const cart =  */await getCart(user.id)
+            return user
+          };
+          
         }
         return null;
       }
