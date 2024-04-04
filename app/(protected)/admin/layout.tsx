@@ -7,7 +7,7 @@ import AdminNavbar from "@/components/admin/Navbar";
 const AdminLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
-      <AdminNavbar />
+      {/* <AdminNavbar /> */}
       {children}
     </>
   );
