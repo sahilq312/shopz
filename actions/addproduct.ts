@@ -16,11 +16,11 @@ export const add = async (values: z.infer<typeof ProductSchema>) => {
     try {
         const newProduct = await db.product.create({
             data: {
-                title,
-                description,
-                price,
-                category,
-                image,
+                title : title,
+                description :description,
+                price :price,
+                category : category,
+                image : image,
             },
         });
 

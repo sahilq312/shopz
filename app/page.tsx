@@ -22,10 +22,16 @@ export default async function Home() {
           <Link
             href={`/products/${product.id}`}
             key={product.id}
-            className="bg-white group cursor-pointer rounded-xl border p-3 space-y-4"
+            className="bg-slate-900 group cursor-pointer rounded-xl border p-3 space-y-4"
           >
             <div className="aspect-square rounded-xl bg-gray-100 relative">
-              <Image src={product.image} alt={product.title} fill unoptimized />
+              <Image
+                className="rounded-md"
+                src={product.image}
+                alt={product.title}
+                fill
+                unoptimized
+              />
             </div>
             <div>
               <p className="font-semibold text-lg">{product.title}</p>
@@ -33,7 +39,7 @@ export default async function Home() {
             </div>
             {/* Price & Reiew */}
             <div className="flex items-center justify-between">
-              <span className="font-semibold">₹{product.price}</span>
+              <span className="font-semibold text-white">₹{product.price}</span>
             </div>
           </Link>
         ))}

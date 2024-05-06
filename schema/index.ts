@@ -13,7 +13,6 @@ export const RegisterSchema = z.object({
 });
 
 export const ProductSchema = z.object({
-    id : z.string(),
     title : z.string(),
     description : z.string(),
     price :  z.coerce.number(),
