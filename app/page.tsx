@@ -15,18 +15,6 @@ const font = Poppins({
 });
 
 export default async function Home() {
-  const session = await auth();
-  if (session) {
-    const cartId = await db.cart.findFirst({
-      where: {
-        userId: session.user.id,
-      },
-    });
-    // Handle the case where cartId is found or not found
-    if(cartId){
-      localStorage.setItem("cart" , cartId?.id)
-    }
-  }
   const products = await List();
   return (
     <div className="space-y-4 p-10">
