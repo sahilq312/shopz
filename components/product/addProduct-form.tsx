@@ -132,7 +132,7 @@ export function ProductForm() {
                 />
               </FormControl>
               <FormDescription>
-                Write a detailed description of the product's features and benefits.
+                Write a detailed description of the product features and benefits.
               </FormDescription>
               <FormMessage />
             </FormItem>
