@@ -83,6 +83,7 @@ type Product = {
   image: string;
   description: string;
   category: string;
+  quantity : number;
 }
 
 export default function AdminProductList({products} : {products : Product[]}) {

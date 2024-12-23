@@ -11,7 +11,7 @@ export const add = async (values: z.infer<typeof ProductSchema>) => {
         return { error: "Invalid field!" };
     }
 
-    const { title, description, price, category, image } = validatedFields.data;
+    const { title, description, price, category, image, quantity } = validatedFields.data;
 
     try {
         const newProduct = await db.product.create({
@@ -20,6 +20,7 @@ export const add = async (values: z.infer<typeof ProductSchema>) => {
                 description :description,
                 price :price,
                 category : category,
+                quantity : quantity,
                 image : image,
             },
         });

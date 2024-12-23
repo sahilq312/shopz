@@ -53,6 +53,7 @@ const productSchema = z.object({
     .min(2, { message: "Category must be at least 2 characters." })
     .max(30, { message: "Category must not be longer than 30 characters." }),
   image: z.string().url({ message: "Please enter a valid URL." }),
+  quantity : z.number()
 });
 
 type ProductFormValues = z.infer<typeof productSchema>;
@@ -63,6 +64,7 @@ const defaultValues: Partial<ProductFormValues> = {
   price: 0,
   category: "",
   image: "",
+  quantity : 0,
 };
 
 export function ProductForm() {
@@ -154,6 +156,25 @@ export function ProductForm() {
                 />
               </FormControl>
               <FormDescription>Set the price in your local currency.</FormDescription>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="quantity"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Quantity</FormLabel>
+              <FormControl>
+                <Input 
+                  placeholder="0" 
+                  {...field} 
+                  type="number" 
+                  onChange={(e) => field.onChange(parseFloat(e.target.value))}
+                />
+              </FormControl>
+              <FormDescription>Set the quantiy in your product.</FormDescription>
               <FormMessage />
             </FormItem>
           )}

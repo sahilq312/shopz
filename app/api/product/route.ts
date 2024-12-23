@@ -1,18 +1,16 @@
 import { db } from "@/lib/db";
 import { Product } from "@prisma/client";
-import { auth } from "@/auth";
-import { NextApiRequest, NextApiResponse } from "next";
 import { NextResponse } from "next/server";
 
 export async function POST(request: Request) {
 
 
     try {
-        const { title, description, category, price, image }: Product = await request.json();
+        const { title, description, category, price, image, quantity }: Product = await request.json();
 
         await db.product.create({
             data: {
-                title, description, category, price, image
+                title, description, category, price, image, quantity
             }
         });
 

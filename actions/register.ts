@@ -20,13 +20,8 @@ export const register = async (values: z.infer<typeof RegisterSchema>) => {
     }
 
     const newUser = await db.user.create({
-        data: { email, password : hashedPassword, name }
+        data: { email, password: hashedPassword, name }
     })
-    await db.cart.create({
-        data : {
-            userId : newUser.id,
-        }
-    })
-    return { success: "Email sent" }
+    return { success: "Account is created" }
 
 }

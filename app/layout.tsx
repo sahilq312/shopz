@@ -5,6 +5,7 @@ import { SessionProvider } from "next-auth/react";
 import { auth } from "@/auth";
 import Navbar from "@/components/ui/Navbar";
 import { ThemeProvider } from "@/components/theme-provider";
+import Header from "@/components/home/header";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -29,7 +30,8 @@ export default async function RootLayout({
             disableTransitionOnChange
             enableSystem
           >
-            <Navbar />
+            <Header/>
+           {/*  <Navbar /> */}
             {children}
           </ThemeProvider>
         </body>

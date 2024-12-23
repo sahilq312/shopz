@@ -1,4 +1,3 @@
-import { removeFromCart } from "@/actions/cart";
 import { deleteProduct } from "@/actions/deleteproduct";
 import {
     Table,
@@ -18,7 +17,7 @@ import Image from "next/image";
 export default async function editProduct(){
     const product = await db.product.findMany();
     //console.log(product);
-    const total = product.reduce((sum, item) => sum + item.price,0);
+   // const total = product.reduce((sum, item) => sum + item.price,0);
     
     return (
         <Table className="">
@@ -38,7 +37,7 @@ export default async function editProduct(){
             <TableCell><Image width={50} height={50} src={item.image} alt={item.title} /></TableCell>
             <TableCell className="font-medium">{item.title}</TableCell>
             <TableCell>{item.category}</TableCell>
-            <TableCell className="text-right">{item.price}</TableCell>
+            <TableCell className="text-right">23</TableCell>
             <TableCell className="flex justify-center"><Trash2Icon/></TableCell>
           </TableRow>
         ))}
@@ -46,7 +45,7 @@ export default async function editProduct(){
       <TableFooter>
         <TableRow>
           <TableCell colSpan={3}>Total</TableCell>
-          <TableCell className="text-right">${total}</TableCell>
+          <TableCell className="text-right">$23</TableCell>
         </TableRow>
       </TableFooter>
     </Table>

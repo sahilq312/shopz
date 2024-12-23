@@ -7,7 +7,7 @@ import {
   DialogContent,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import  LoginForm  from "@/components/auth/loginpage-form";
+//import  LoginForm  from "@/components/auth/loginpage-form";
 
 interface LoginButtonProps {
   children: React.ReactNode;
@@ -33,7 +33,7 @@ export const LoginButton = ({
           {children}
         </DialogTrigger>
         <DialogContent className="p-0 w-auto bg-transparent border-none">
-          <LoginForm />
+          {/* <LoginForm /> */}
         </DialogContent>
       </Dialog>
     )
