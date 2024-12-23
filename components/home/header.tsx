@@ -21,7 +21,9 @@ const AdminNavigation = [
 
 const Header = async() => {
   const session = await auth();
-  //const cartlength = useCartStore((state) => state.cart.length)
+  if(!session) {
+    return <></>
+  }
 
     return (
         <header className="sticky top-0 z-50 w-full border-b bg-background">
