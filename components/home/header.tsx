@@ -6,6 +6,7 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { cn } from "@/lib/utils"
 import { auth } from "@/auth"
 import CartNumbers from "./cart-number"
+import { ModeToggle } from "../ui/toggle"
 
 const UserNavigation = [
     { name: "Shop", href: "/shop" },
@@ -80,6 +81,7 @@ const Header = async() => {
               )) }
             </nav>
             <div className="flex items-center gap-4">
+              <ModeToggle/>
               <CartNumbers/>
               <Link href="/account" className="text-sm font-medium">
                 My account
