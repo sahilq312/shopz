@@ -12,6 +12,8 @@ NextCommerce is a cutting-edge e-commerce web application designed to provide a 
 
 [Shadcn.ui](https://ui.shadcn.com/) - for ui components
 
+[Zustand]([https://ui.shadcn.com](https://zustand-demo.pmnd.rs/)) - for client side data management 
+
 
 [NeonDB] (http://neon.tech) - lightweight noSQL database 
 
