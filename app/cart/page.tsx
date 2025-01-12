@@ -1,4 +1,49 @@
-"use client";
+import { getCart } from "@/actions/cart"
+import Link from "next/link";
+import { ShoppingBag } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
+import { CartItemComponent } from "@/components/cart/cart-item";
+
+
+export default async function CartPage() { 
+  const { success: cart, error } = await getCart();
+
+  if (error) {
+    return <div>{error}</div>;
+  }
+
+  if (!cart) {
+    return (
+      <Card className="flex flex-col items-center justify-center p-8 text-center">
+        <ShoppingBag className="mb-4 h-16 w-16 text-muted-foreground" />
+        <h2 className="mb-2 text-2xl font-semibold">Your cart is empty</h2>
+        <p className="mb-4 text-muted-foreground">
+          Looks like you haven&apos;t added any items to your cart yet.
+        </p>
+        <Button asChild>
+          <Link href="/">Start Shopping</Link>
+        </Button>
+      </Card>
+    );
+  }
+  console.log(cart.cartItems);
+  
+  return (
+    <div className="container mx-auto px-4 py-8">
+      <h1 className="mb-8 text-3xl font-bold">Your Cart</h1>
+      {cart.cartItems.map((item) => (
+        <div key={item.id}>
+          <CartItemComponent item={{ ...item, cartId: cart.id }} />
+          <Separator className="my-4" />
+        </div>
+       ))}
+    </div>
+  )
+}
+
+/* "use client";
 
 import { useState } from "react";
 import Link from "next/link";
@@ -17,6 +62,7 @@ export default function CartPage() {
     clearCart,
     getTotal,
   } = useCartStore();
+
 
   const totalPrice = getTotal();
 
@@ -73,4 +119,4 @@ export default function CartPage() {
       )}
     </div>
   );
-}
+} */
