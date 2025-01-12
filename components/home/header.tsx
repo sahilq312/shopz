@@ -9,7 +9,7 @@ import CartNumbers from "./cart-number"
 import { ModeToggle } from "../ui/toggle"
 
 const UserNavigation = [
-    { name: "Shop", href: "/shop" },
+    { name: "Shop", href: "/" },
     { name: "Collections", href: "/collections" },
     { name: "Explore", href: "/explore" },
   ]

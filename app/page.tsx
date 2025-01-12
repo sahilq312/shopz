@@ -2,7 +2,9 @@ import { Poppins } from "next/font/google";
 import { List } from "@/actions/productList";
 import { ProductCard } from "@/components/home/product-card";
 import { FilterButton } from "@/components/home/filter-button";
-import { Product } from "@prisma/client";
+import { getSession } from "next-auth/react";
+import { redirect } from "next/navigation";
+import { auth } from "@/auth";
 
 
 const font = Poppins({
@@ -12,6 +14,12 @@ const font = Poppins({
 
 
 export default async function Home() {
+  const session = await auth();
+  if (!session) {
+    redirect("/auth/signin");
+  }
+  console.log(session);
+  
   const products = await List();
   return (
     <main className="container py-10">
