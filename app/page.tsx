@@ -14,11 +14,6 @@ const font = Poppins({
 
 
 export default async function Home() {
-  const session = await auth();
-  if (!session) {
-    redirect("/auth/signin");
-  }
-  console.log(session);
   
   const products = await List();
   return (
