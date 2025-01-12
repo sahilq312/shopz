@@ -12,10 +12,7 @@ const font = Poppins({
 
 
 export default async function Home() {
-<<<<<<< Updated upstream
-=======
   
->>>>>>> Stashed changes
   const products = await List();
   return (
     <main className="container py-10">
