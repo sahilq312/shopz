@@ -9,7 +9,6 @@ export default async function Page() {
 
   return (
     <div className="flex min-h-screen w-full flex-col bg-muted/40">
-      
       <AdminProductList products={product}/>
     </div>
   );
