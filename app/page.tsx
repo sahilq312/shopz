@@ -2,8 +2,6 @@ import { Poppins } from "next/font/google";
 import { List } from "@/actions/productList";
 import { ProductCard } from "@/components/home/product-card";
 import { FilterButton } from "@/components/home/filter-button";
-import { Product } from "@prisma/client";
-
 
 const font = Poppins({
   subsets: ["latin"],
@@ -12,8 +10,11 @@ const font = Poppins({
 
 
 export default async function Home() {
-  
+
   const products = await List();
+  if (!products || !products.success ) { 
+    return <div>error</div>
+  }
   return (
     <main className="container py-10">
     <div className="space-y-4">
@@ -53,7 +54,7 @@ export default async function Home() {
     </div>
 
     <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-        { products.map((product, index) => (
+        { products?.success.map((product, index) => (
           <ProductCard product={product} key={index}/>
         )) }
       </div>
