@@ -21,7 +21,7 @@ const AdminNavigation = [
 
 const Header = async() => {
   const session = await auth();
-  if(!session) {
+  if(!session ) {
     return <></>
   }
 
@@ -80,7 +80,11 @@ const Header = async() => {
                 >
                   {item.name}
                 </Link>
-              )) }
+              ))}
+            
+            {
+              session.user.role === "ADMIN" && <Link href={"/admin/edit"}>Admin</Link>
+            }
             </nav>
             <div className="flex items-center gap-4">
               <ModeToggle/>
